@@ -20,6 +20,7 @@ import org.springframework.core.io.ClassPathResource;
 import javax.sql.DataSource;
 
 /**
+ * @see <a href='https://kingbbode.tistory.com/38'>https://kingbbode.tistory.com/38</a>
  * @author glqdlt
  */
 @Configuration
