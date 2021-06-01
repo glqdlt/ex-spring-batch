@@ -23,10 +23,10 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * @author 전일웅
+ * @author jhun
  */
-@Configuration
-@EnableBatchProcessing
+//@Configuration
+//@EnableBatchProcessing
 public class TestLocalBatch {
 
     @Autowired
