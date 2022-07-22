@@ -3,7 +3,7 @@ https://docs.spring.io/spring-batch/docs/current/reference/html/spring-batch-int
 
 스프링 배치는 큰 틀에서 보면 배치는 아래의 개념들로 이루어져있다.
 
-![](.ReadMe_images/0c10a791.png)
+![](.ReadMe_images/68bd660f.png)
 
 - JobRunner : 잡런처 트리거(HTTP 트리거, 스케줄링 트리거, 메세지 브로커 트리거..)
 

@@ -1,0 +1,17 @@
+@startuml
+
+rectangle JobRunner as jr
+rectangle JobLauncher as jl
+rectangle STEP{
+    rectangle Reader
+    rectangle Writer
+    rectangle Processor
+}
+
+jr -> jl
+jl -> STEP
+
+Reader -> Writer
+Writer -> Processor
+
+@enduml
