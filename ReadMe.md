@@ -1,4 +1,6 @@
 
+https://docs.spring.io/spring-batch/docs/current/reference/html/spring-batch-intro.html#spring-batch-intro
+
 스프링 배치는 큰 틀에서 보면 배치는 아래의 개념들로 이루어져있다.
 
 
