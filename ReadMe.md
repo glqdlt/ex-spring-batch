@@ -2,12 +2,12 @@
 스프링 배치는 큰 틀에서 보면 배치는 아래의 개념들로 이루어져있다.
 
 
-- JobRunner
+- JobRunner : 잡런처 트리거
 
-- JobLauncher
+- JobLauncher : 잡의 실행 주체
 
-- Job
-    - Step
+- Job : STEP 들의 묶음
+    - Step : 배치 작업
         - Reader
         - Processor
         - Writer
