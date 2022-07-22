@@ -1,0 +1,40 @@
+@startuml
+
+class CommandLineJobRunner{}
+
+class JobRegistryBackgroundJobRunner{}
+
+class JobLauncherCommandLineRunner{}
+
+interface JobLauncher{
+
+}
+
+class SimpleJobLauncher implements JobLauncher{
+}
+
+
+interface ItemStream{}
+
+interface Reader extends ItemStream{}
+interface Processor extends ItemStream{}
+interface Writer extends ItemStream{}
+
+interface Step{
+    Reader Reader
+    Processor Processor
+    Writer Writer
+}
+
+Step --> Reader
+Step --> Processor
+Step --> Writer
+
+JobLauncher -> Step
+
+CommandLineJobRunner --> JobLauncher
+JobRegistryBackgroundJobRunner --> JobLauncher
+JobLauncherCommandLineRunner --> JobLauncher
+
+
+@enduml
