@@ -35,7 +35,7 @@ Writer 는 Processor 가 작업한 결과물을 최종적으로 저장하는 역
 
 만약에 Reader 가 엑셀의 내부 행들을 읽어서 RDB에 저장을 해야 한다는 시나리오가 있다고 가정해보자. Reader 는 엑셀의 내부 행들을 읽는 기능을 담당한다. 여기서 Processor 가 하는 일은 엑셀의 행을 RDB에 저장하기 위한 데이터셋(JPA로 치면 엔티티) 로 변환하는 과정의 일을 하게 된다. Writer 는 변환 된 데이터 셋을 RDB에 BULK INSERT 를 하는 등의 역활을 가진다.
 
-STEP 은 Reader, Processor, Writer 를 하나의 꾸러미로 묶은 컴포넌트이다. Reader Processor Writer 는 물리적으로 다르지만, 사실 ItemStream 라는 추상체를 같은 유형이기 때문에 STEP 내부에서는 List<ItemStream> 이라는 엔트리로 다같이 등록이 된다. 이게 무슨말이냐면, setReader() setProcessor() setWriter() 가 아니라.. addAll(reader,processor, writer) 이런식으로 등록이 된다. 이 말의 의미는 reader,processor,writer 라는 일련의 순서가 아닌 processor, writer, reader 의 순서로 남길수도 있다. 하지만 STEP 이 만들어진 단계에서 올바른 순서로 적재가 되기 때문에 이슈는 없다. 
+STEP 은 Reader, Processor, Writer 를 하나의 꾸러미로 묶은 컴포넌트이다. Reader Processor Writer 는 물리적으로 다르지만, 사실 ItemStream 라는 추상체를 같은 유형이기 때문에 STEP 내부에서는 List<ItemStream> 이라는 엔트리로 다같이 등록이 된다. 이게 무슨말이냐면, setReader() setProcessor() setWriter() 가 아니라.. addAll(reader,processor, writer) 이런식으로 등록이 된다. 이 말의 의미는 reader,processor,writer 라는 일련의 순서가 아닌 processor, writer, reader 의 순서로 남길수도 있다. 하지만 STEP 이 만들어지는 과정(빌더)에서 리더, 프로세서, 롸이터 순으로 적재하도록 요구 되기 때문에 이슈는 없다. 
 
 ### JOB
 
